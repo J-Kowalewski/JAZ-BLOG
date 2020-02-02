@@ -16,7 +16,7 @@ public class LoginFilter extends HttpFilter {
         if (isResourceReq(req) || isSiteAllowed(req) || isUserLogged(req)) {
             chain.doFilter(req, res);
         } else {
-            res.sendRedirect(getServletContext().getContextPath() + "/login.xhtml");
+            res.sendRedirect(getServletContext().getContextPath() + "/start.xhtml");
         }
     }
 
@@ -26,9 +26,12 @@ public class LoginFilter extends HttpFilter {
     }
 
     private boolean isSiteAllowed(HttpServletRequest req) {
-        return req.getRequestURI().equals(req.getContextPath() + "/login.xhtml") ||
+        return  req.getRequestURI().equals(req.getContextPath() + "/login.xhtml") ||
                 req.getRequestURI().equals(req.getContextPath() + "/register.xhtml") ||
-                req.getRequestURI().contains("samples") ||
+                req.getRequestURI().equals(req.getContextPath() + "/samples/doorlist.xhtml") ||
+                req.getRequestURI().equals(req.getContextPath() + "/samples/doorview.xhtml") ||
+                req.getRequestURI().equals(req.getContextPath() + "/start.xhtml") ||
+
                 // ONLY FOR TESTING
                 req.getRequestURI().contains("api") ||
                 req.getRequestURI().contains("admin");

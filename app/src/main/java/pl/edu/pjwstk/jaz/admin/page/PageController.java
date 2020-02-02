@@ -1,4 +1,4 @@
-package pl.edu.pjwstk.jaz.admin.category.list;
+package pl.edu.pjwstk.jaz.admin.page;
 
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Named;
@@ -6,7 +6,7 @@ import java.time.LocalDate;
 
 @Named
 @RequestScoped
-public class ListCategoryController {
+public class PageController {
     public String editList()
     {
         return "/samples/editdoor.xhtml?faces-redirect=true";
