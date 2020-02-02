@@ -15,6 +15,6 @@ public class LogoutController {
     public String logout() {
         profileService.logout();
 
-        return "login.xhtml?faces-redirect=true";
+        return "start.xhtml?faces-redirect=true";
     }
 }

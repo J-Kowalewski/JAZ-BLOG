@@ -1,9 +1,14 @@
 package pl.edu.pjwstk.jaz.samples.door.edit;
 
+import pl.edu.pjwstk.jaz.auth.UserContext;
 import pl.edu.pjwstk.jaz.samples.jpa.Door;
 import pl.edu.pjwstk.jaz.samples.jpa.Location;
 
+import javax.inject.Inject;
+import java.time.LocalDate;
+
 public class EditDoorRequest {
+
     private Long id;
     private String name;
     private String floor;
@@ -13,9 +18,7 @@ public class EditDoorRequest {
     public EditDoorRequest() {
     }
 
-    //TODO autor ma się ustawiać na UserContext.getUsername()
-    //TODO SAME SHIT WITH DATE ListCategoryController.getCurrentDate()
-    //TODO LISTAAA WPISÓW MA SIĘ WYŚWIETLAĆ BEZ LOGOWANIA DO CHUUUUJAAA
+    //TODO autor ma się ustawiać na UserContext.getUsername() [null pointer]
 
     public EditDoorRequest(Door door) {
         this.id = door.getId();
@@ -23,6 +26,10 @@ public class EditDoorRequest {
         this.floor = door.getLocation().getFloor();
         this.author = door.getLocation().getAuthor();
         this.date = door.getLocation().getDate();
+    }
+
+    public String getCurrentDate(){
+        return String.valueOf(LocalDate.now());
     }
 
     public Long getId() {
@@ -66,6 +73,6 @@ public class EditDoorRequest {
     }
 
     public Door toDoor() {
-        return new Door(id, new Location(name, floor, author, date));
+        return new Door(id, new Location(name, floor, author, getCurrentDate()));
     }
 }

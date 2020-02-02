@@ -16,7 +16,7 @@ public class LoginFilter extends HttpFilter {
         if (isResourceReq(req) || isSiteAllowed(req) || isUserLogged(req)) {
             chain.doFilter(req, res);
         } else {
-            res.sendRedirect(getServletContext().getContextPath() + "/start.xhtml");
+            res.sendRedirect(getServletContext().getContextPath() + "/login.xhtml");
         }
     }
 

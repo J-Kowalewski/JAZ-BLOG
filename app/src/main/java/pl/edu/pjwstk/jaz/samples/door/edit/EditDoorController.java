@@ -6,6 +6,7 @@ import pl.edu.pjwstk.jaz.samples.jpa.DoorRepository;
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
+import java.time.LocalDate;
 
 @Named
 @RequestScoped
@@ -17,6 +18,8 @@ public class EditDoorController {
     private ParamRetriever paramRetriever;
 
     private EditDoorRequest editDoorRequest;
+
+
 
     public EditDoorRequest getEditRequest() {
         if (editDoorRequest == null) {
