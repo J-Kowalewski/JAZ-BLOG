@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:f="http://xmlns.jcp.org/jsf/core"
+>
+<h:body>
+
+    <ui:composition template="../templates/base.xhtml">
+        <ui:param name="title" value="Door list"/>
+
+        <ui:define name="content">
+            <div class="w-25" >
+                <div>
+                <h:link styleClass="btn-primary" value="Wróć do Strony Głównej" outcome="/index"/>
+                </div>
+                <h:outputText style="font-weight:bold" value=" #{editDoorController.editRequest.name}"/>
+                <br></br>
+                <h:outputText  value=" #{editDoorController.editRequest.floor}"/>
+                <br></br>
+                <h:outputText  value=" #{editDoorController.editRequest.date}"/>
+                <br></br>
+                <h:outputText  value=" #{editDoorController.editRequest.author}"/>
+            </div>
+        </ui:define>
+
+    </ui:composition>
+
+</h:body>
+</html>
