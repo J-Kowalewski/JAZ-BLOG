@@ -6,11 +6,11 @@ import javax.inject.Named;
 @Named
 @RequestScoped
 public class PageController {
-    public String editList()
+    public String editEntry()
     {
-        return "/samples/editdoor.xhtml?faces-redirect=true";
+        return "/entries/editentry.xhtml?faces-redirect=true";
     }
-    public String doorList() { return "/samples/doorlist.xhtml?faces-redirect=true";}
+    public String entryList() { return "/entries/entrylist.xhtml?faces-redirect=true";}
     public String gotoLogin(){
         return "/login.xhtml?faces-redirect=true";
     }

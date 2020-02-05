@@ -8,18 +8,22 @@
 <h:body>
 
     <ui:composition template="../templates/base.xhtml">
-        <ui:param name="title" value="Door list"/>
+        <ui:param name="title" value="Entry list"/>
 
         <ui:define name="content">
             <div class="w-25">
                 <h:link styleClass="btn-primary" value="Wróć do Strony Głównej" outcome="/index"/>
-                <h:link styleClass="btn-primary" value="Add" outcome="editdoor"/>
+                <h:link styleClass="btn-primary" value="Add" outcome="editentry"/>
                 <div class="list-group">
-                    <ui:repeat value="#{listDoorController.doorList}" var="door">
-                        <h:link styleClass="list-group-item list-group-item-action" outcome="doorview">
-                            <f:param name="doorId" value="#{door.id}"/>
+                    <ui:repeat value="#{listEntryController.entryList}" var="entry">
+                        <h:link styleClass="list-group-item list-group-item-action" outcome="viewentry">
+                            <f:param name="entryId" value="#{entry.id}"/>
 
-                            <h:outputText  value="##{door.id} #{door.location.name}"/>
+                            <h:outputText  value="##{entry.id} #{entry.location.name}"/>
+                        </h:link>
+                        <h:link styleClass="btn-primary" outcome="editentry">
+                            <f:param name="entryId" value="#{entry.id}"/>
+                            <h:outputText  value="Edytuj"/>
                         </h:link>
                     </ui:repeat>
                 </div>

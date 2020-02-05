@@ -1,13 +1,11 @@
-package pl.edu.pjwstk.jaz.samples.door.edit;
+package pl.edu.pjwstk.jaz.entries.edit;
 
-import pl.edu.pjwstk.jaz.auth.UserContext;
-import pl.edu.pjwstk.jaz.samples.jpa.Door;
-import pl.edu.pjwstk.jaz.samples.jpa.Location;
+import pl.edu.pjwstk.jaz.entries.jpa.Entry;
+import pl.edu.pjwstk.jaz.entries.jpa.Location;
 
-import javax.inject.Inject;
 import java.time.LocalDate;
 
-public class EditDoorRequest {
+public class EditEntryRequest {
 
     private Long id;
     private String name;
@@ -15,17 +13,17 @@ public class EditDoorRequest {
     private String author;
     private String date;
 
-    public EditDoorRequest() {
+    public EditEntryRequest() {
     }
 
     //TODO autor ma się ustawiać na UserContext.getUsername() [null pointer]
 
-    public EditDoorRequest(Door door) {
-        this.id = door.getId();
-        this.name = door.getLocation().getName();
-        this.floor = door.getLocation().getFloor();
-        this.author = door.getLocation().getAuthor();
-        this.date = door.getLocation().getDate();
+    public EditEntryRequest(Entry entry) {
+        this.id = entry.getId();
+        this.name = entry.getLocation().getName();
+        this.floor = entry.getLocation().getFloor();
+        this.author = entry.getLocation().getAuthor();
+        this.date = entry.getLocation().getDate();
     }
 
     public String getCurrentDate(){
@@ -72,7 +70,7 @@ public class EditDoorRequest {
         this.date = date;
     }
 
-    public Door toDoor() {
-        return new Door(id, new Location(name, floor, author, getCurrentDate()));
+    public Entry toEntry() {
+        return new Entry(id, new Location(name, floor, author, getCurrentDate()));
     }
 }

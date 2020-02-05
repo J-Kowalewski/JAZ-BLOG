@@ -9,7 +9,7 @@
 <h:body>
 
     <ui:composition template="../templates/base.xhtml">
-        <ui:param name="title" value="Edit door"/>
+        <ui:param name="title" value="Edit entry"/>
 
         <ui:define name="content">
             <h:link styleClass="btn-primary" value="Wróć do Strony Głównej" outcome="/index"/>
@@ -17,21 +17,21 @@
                 <h:outputLabel rendered="#{flash.containsKey('error-message')}"
                                styleClass="alert alert-danger" value="#{flash['error-message']}"/>
                 <h:form styleClass="form-base">
-                    <h:inputHidden value="#{editDoorController.editRequest.id}" />
-                    <h:inputHidden value="#{editDoorController.editRequest.author}"/>
-                    <h:inputHidden value="#{editDoorController.editRequest.date}"/>
+                    <h:inputHidden value="#{editEntryController.editRequest.id}" />
+                    <h:inputHidden value="#{editEntryController.editRequest.author}"/>
+                    <h:inputHidden value="#{editEntryController.editRequest.date}"/>
 
                     <div class="form-group">
-                        <h:inputText id="door-name" styleClass="form-control" a:placeholder="Title"
-                                     value="#{editDoorController.editRequest.name}"/>
+                        <h:inputText id="entry-name" styleClass="form-control" a:placeholder="Title"
+                                     value="#{editEntryController.editRequest.name}"/>
                     </div>
 
                     <div class="form-group">
                         <h:inputTextarea rows="8" id="floor" styleClass="form-control" a:placeholder="Text"
-                                       value="#{editDoorController.editRequest.floor}"/>
+                                       value="#{editEntryController.editRequest.floor}"/>
                     </div>
 
-                    <h:commandButton styleClass="btn btn-primary" value="Save" action="#{editDoorController.save}"/><br/>
+                    <h:commandButton styleClass="btn btn-primary" value="Save" action="#{editEntryController.save}"/><br/>
                 </h:form>
             </div>
         </ui:define>

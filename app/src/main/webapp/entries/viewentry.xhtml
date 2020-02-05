@@ -8,20 +8,20 @@
 <h:body>
 
     <ui:composition template="../templates/base.xhtml">
-        <ui:param name="title" value="Door list"/>
+        <ui:param name="title" value="Entry list"/>
 
         <ui:define name="content">
             <div class="w-25" >
                 <div>
-                <h:link styleClass="btn-primary" value="Wróć do Strony Głównej" outcome="/index"/>
+                    <h:link styleClass="btn-primary" value="Wróć do Strony Głównej" outcome="/index"/>
                 </div>
-                <h:outputText style="font-weight:bold" value=" #{editDoorController.editRequest.name}"/>
+                <h:outputText style="font-weight:bold" value=" #{editEntryController.editRequest.name}"/>
                 <br></br>
-                <h:outputText  value=" #{editDoorController.editRequest.floor}"/>
+                <h:outputText  value=" #{editEntryController.editRequest.floor}"/>
                 <br></br>
-                <h:outputText  value="Data:  #{editDoorController.editRequest.date}"/>
+                <h:outputText  value="Data:  #{editEntryController.editRequest.date}"/>
                 <br></br>
-                <h:outputText  value="Autor:  #{editDoorController.editRequest.author}"/>
+                <h:outputText  value="Autor:  #{editEntryController.editRequest.author}"/>
             </div>
         </ui:define>
 

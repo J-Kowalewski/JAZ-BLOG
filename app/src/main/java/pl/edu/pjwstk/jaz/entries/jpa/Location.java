@@ -1,4 +1,4 @@
-package pl.edu.pjwstk.jaz.samples.jpa;
+package pl.edu.pjwstk.jaz.entries.jpa;
 
 import javax.persistence.Column;
 import javax.persistence.Embeddable;

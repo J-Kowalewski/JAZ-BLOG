@@ -1,4 +1,4 @@
-package pl.edu.pjwstk.jaz.samples.jpa;
+package pl.edu.pjwstk.jaz.entries.jpa;
 
 import javax.persistence.Column;
 import javax.persistence.Embedded;
@@ -8,7 +8,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class Door {
+public class Entry {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id")
@@ -17,14 +17,14 @@ public class Door {
     @Embedded
     private Location location;
 
-    public Door() {
+    public Entry() {
     }
 
-    public Door(Location location) {
+    public Entry(Location location) {
         this.location = location;
     }
 
-    public Door(Long id, Location location) {
+    public Entry(Long id, Location location) {
         this.id = id;
         this.location = location;
     }

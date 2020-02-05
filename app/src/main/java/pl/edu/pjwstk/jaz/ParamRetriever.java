@@ -1,4 +1,4 @@
-package pl.edu.pjwstk.jaz.samples;
+package pl.edu.pjwstk.jaz;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
